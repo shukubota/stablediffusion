@@ -5,4 +5,4 @@ WORKDIR /app
 RUN sudo apt-get update
 
 # RUN sudo apt-get install -y rustc
-pip install transformers==4.30.1 diffusers invisible-watermark
+RUN pip install transformers==4.30.1 diffusers invisible-watermark
