@@ -20,7 +20,7 @@ spec:
         cloud.google.com/gke-accelerator: nvidia-tesla-t4
         # cloud.google.com/gke-spot: "true"
       containers:
-      - image: asia-northeast1-docker.pkg.dev/empowerme-bb3c5/empowerme-diffusion/f15ea9c:latest
+      - image: asia-northeast1-docker.pkg.dev/empowerme-bb3c5/empowerme-diffusion/880a3a4:latest
         name: stable-diffusion
         resources:
           limits:
