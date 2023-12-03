@@ -2,30 +2,29 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: empowerme-test7
-  name: empowerme-test7
+    app: stable-diffusion
+  name: stable-diffusion-deployment
 spec:
   replicas: 1
   revisionHistoryLimit: 1
   progressDeadlineSeconds: 30
   selector:
     matchLabels:
-      app: empowerme-test7
+      app: stable-diffusion
   template:
     metadata:
       labels:
-        app: empowerme-test7
+        app: stable-diffusion
     spec:
       nodeSelector:
         cloud.google.com/gke-accelerator: nvidia-tesla-t4
         # cloud.google.com/gke-spot: "true"
       containers:
-      - image: asia-northeast1-docker.pkg.dev/empowerme-bb3c5/empowerme-diffusion/880a3a4:latest
-        name: empowerme-test7
+      - image: asia-northeast1-docker.pkg.dev/empowerme-bb3c5/empowerme-diffusion/f15ea9c:latest
+        name: stable-diffusion
         resources:
           limits:
             nvidia.com/gpu: "1"
-            ephemeral-storage: "20Gi"
           requests:
             cpu: "8"
             memory: "8Gi"
